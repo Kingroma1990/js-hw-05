@@ -15,7 +15,7 @@ const User = function({name, age, followers}) {
 
   this.getInfo = function() {
     console.log(
-      `User ${name} is ${age} years old and has ${followers} followers`,
+      `User ${this.name} is ${this.age} years old and has ${this.followers} followers`,
     );
   };
 };

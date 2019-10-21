@@ -10,12 +10,12 @@ class Car {
 
   static getSpecs(car) {}
 
-  get turnOn() {
-    return this.price;
+  get price() {
+    return this._price;
   }
 
-  set turnOn(price) {
-    this.price || 0;
+  set price(value) {
+    this._price = value;
   }
 
   turnOn() {
@@ -27,8 +27,14 @@ class Car {
     this.speed = 0;
   }
 
-  accelerate(value) {}
-
+  accelerate(value) {
+    if (this.speed + value <= this.maxSpeed) {
+      this.speed += value;
+      return true;
+    } else {
+      return false;
+    }
+  }
   decelerate(value) {
     this.speed -= value;
     this.speed !== 0;
